@@ -1,0 +1,163 @@
+.code-block,
+pre[class*="language-"] {
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.4;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    background-color: var(--blue-6) !important;
+    text-shadow: none !important;
+}
+
+.inline-code {
+    background-color: var(--blue-6) !important;
+    color: var(--gold-2) !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-family: var(--code-font-stack) !important;
+    font-size: 0.85em !important;
+    white-space: nowrap !important;
+}
+
+/* Custom Prism.js theme colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--grey-1);
+}
+
+.token.punctuation {
+    color: var(--gold-1);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--blue-2);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: var(--gold-4);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: var(--blue-3);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: var(--gold-2);
+}
+
+.token.function,
+.token.class-name {
+    color: var(--blue-1);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: var(--gold-3);
+}
+
+
+
+/* Scoped Prism theme for gold background and blue syntax */
+.gold-theme-code pre[class*="language-"],
+.gold-theme-code code[class*="language-"] {
+    color: var(--blue-7) !important;
+    background: var(--gold-2) !important;
+    text-shadow: none !important;
+    font-family: var(--code-font-stack) !important;
+    line-height: 1.4 !important;
+    white-space: pre !important;
+    word-spacing: normal !important;
+    word-break: normal !important;
+    word-wrap: normal !important;
+    border-radius: 4px !important;
+    margin: 1em 0 !important;
+}
+
+.gold-theme-code .token.comment,
+.gold-theme-code .token.prolog,
+.gold-theme-code .token.doctype,
+.gold-theme-code .token.cdata {
+    color: var(--blue-4) !important;
+}
+
+.gold-theme-code .token.punctuation {
+    color: var(--blue-5) !important;
+}
+
+.gold-theme-code .token.property,
+.gold-theme-code .token.tag,
+.gold-theme-code .token.boolean,
+.gold-theme-code .token.number,
+.gold-theme-code .token.constant,
+.gold-theme-code .token.symbol,
+.gold-theme-code .token.deleted {
+    color: var(--blue-6) !important;
+}
+
+.gold-theme-code .token.selector,
+.gold-theme-code .token.attr-name,
+.gold-theme-code .token.string,
+.gold-theme-code .token.char,
+.gold-theme-code .token.builtin,
+.gold-theme-code .token.inserted {
+    color: var(--blue-3) !important;
+}
+
+.gold-theme-code .token.operator,
+.gold-theme-code .token.entity,
+.gold-theme-code .token.url,
+.gold-theme-code .language-css .token.string,
+.gold-theme-code .style .token.string {
+    color: var(--blue-5) !important;
+}
+
+.gold-theme-code .token.atrule,
+.gold-theme-code .token.attr-value,
+.gold-theme-code .token.keyword {
+    color: var(--blue-6) !important;
+}
+
+.gold-theme-code .token.function,
+.gold-theme-code .token.class-name {
+    color: var(--blue-7) !important;
+}
+
+.gold-theme-code .token.regex,
+.gold-theme-code .token.important,
+.gold-theme-code .token.variable {
+    color: var(--blue-4) !important;
+}
+
+/* Inline code styles for this theme */
+.gold-theme-code .inline-code {
+    background-color: var(--gold-2) !important;
+    color: var(--blue-7) !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-family: var(--code-font-stack) !important;
+    font-size: 0.85em !important;
+    white-space: nowrap !important;
+}

@@ -1,0 +1,53 @@
+.region-form {
+    border-color: var(--gold-3) !important;
+}
+
+.form-control {
+    background-color: var(--gold-1);
+    color: var(--hextech-black);
+    border-color: var(--gold-5);
+}
+
+.form-control:focus {
+    color: var(--hextech-black);
+    border-color: var(--blue-1);
+    box-shadow: 0 0 0 0.2rem var(--blue-1);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--gold-5), var(--gold-4));
+    border: none;
+    padding: 10px 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary span {
+    color: var(--blue-7);
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--blue-4), var(--blue-2));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+.btn-primary:hover span {
+    color: var(--gold-1);
+}

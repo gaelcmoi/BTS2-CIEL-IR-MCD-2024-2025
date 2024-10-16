@@ -1,0 +1,39 @@
+/************************************/
+/************** TABLES **************/
+/************************************/
+
+.table > :not(caption) > * > * {
+    background-color: unset;
+    color:unset;
+    border-color: var(--grey-3);
+}
+
+.table {
+    color: var(--gold-1) !important;
+}
+
+.card {
+    background: linear-gradient(to left, var(--blue-6), var(--blue-7));
+    color: var(--gold-1) !important;
+    border-color: var(--gold-5) !important;
+}
+
+.card:hover {
+    background: linear-gradient(to left, var(--blue-3), var(--blue-4));
+    border-color: var(--gold-5) !important;
+}
+
+.card-img-top {
+    height: 100px;
+    object-fit: contain;
+}
+
+.clickable-row, .clickable-card {
+    cursor: pointer;
+}
+.clickable-row:hover {
+    background-color: #f5f5f5;
+}
+.clickable-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

@@ -12,9 +12,8 @@ League of Legends est un jeu populaire avec de nombreux champions, chacun ayant 
 - Quel est l'élément central du jeu League of Legends que nous cherchons à modéliser ?
 
 ### 2. Définition des attributs
-- Quels types d'informations sont nécessaires pour décrire complètement un champion ?
 - Comment pouvez-vous représenter l'identifiant unique d'un champion dans le modèle ?
-- Quels types de données seraient appropriés pour chaque attribut que vous avez identifié ?
+- Quels informations sont uniques à un champion ? Les informations non uniques seront alors des entités secondaires.
 
 ### 3. Identification des entités secondaires
 - Outre les champions, quelles autres catégories d'informations sont importantes dans League of Legends et pourront être modélisées sous forme d'entités ?
@@ -37,11 +36,9 @@ League of Legends est un jeu populaire avec de nombreux champions, chacun ayant 
 - Comment allez-vous organiser visuellement votre diagramme pour qu'il soit clair et facile à comprendre ?
 
 ## Conseils
-- Pensez à la façon dont les joueurs interagissent avec les champions dans le jeu. Quelles informations sont importantes pour eux ?
-- N'hésitez pas à faire des recherches sur League of Legends si vous n'êtes pas familier avec tous les aspects du jeu.
 - Réfléchissez à la manière dont votre modèle pourrait être utilisé dans un système réel. Est-il complet ? Est-il trop complexe ?
 
 ## Rendu
 À la fin du TP, vous devriez avoir un diagramme entité-relation complet représentant le modèle de données pour les champions de League of Legends. Préparez-vous à expliquer vos choix de modélisation.
 
-Une fois votre MCD réalisé et validé (par retour de Pull Request 👀) vous pouvez passer à [l'intégration de la base dans le site web](TP_integration_MCD.md).
+Une fois votre MCD réalisé vous pouvez passer à [l'intégration de la base dans le site web](TP_integration_MCD.md).

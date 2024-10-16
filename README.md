@@ -17,7 +17,11 @@ L'usage des ces documents en dehors de la formation nommée ci-dessus est formel
   * [Modèle Conceptuel de Données](./MCD.md)
   * [Migrations avec Laravel](./Migration.md)
   * [Rappels de SQL](./SQL.md)
+  * [Le MVC](./MVC.md)
+  * [Les opérations CRUD en base de données](./CRUD.md)
+  * [Les routes sous Laravel](./routes.md)
 * TP :
   1. [TP MCD](TP_MCD.md)
   2. [TP Intégration du MCD dans un site web](TP_integration_MCD.md)
-  3. [TP SQL](./SQL.md)
+  3. [TP SQL](./TP_SQL.md)
+  4. [TP MVC](./TP_MVC.md)

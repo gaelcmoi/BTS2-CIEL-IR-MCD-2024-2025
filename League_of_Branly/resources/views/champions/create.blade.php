@@ -10,49 +10,62 @@
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
-        <!--<div class="mb-3">
+        <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" required>
         </div>
         <div class="mb-3">
             <label for="lore" class="form-label">Lore</label>
             <textarea class="form-control" id="lore" name="lore" rows="3"></textarea>
-        </div>-->
+        </div>
         <div class="mb-3">
-            <label for="release_year" class="form-label">Release Year</label>
-            <input type="number" class="form-control" id="release_year" name="release_date" min="2009" max="{{ date('Y') }}" required>
+            <label for="years_id" class="form-label">Release Year</label>
+            <select class="form-select" id="years_id" name="years_id" required>
+                <option value="" disabled selected>-</option>
+                @foreach($years as $year)
+                    <option value="{{ $year->years_id }}">{{ $year->year }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="gender_id" class="form-label">Gender</label>
             <select class="form-select" id="gender_id" name="gender_id" required>
+                <option value="" disabled selected>-</option>
                 @foreach($genders as $gender)
                 <option value="{{ $gender->id }}">{{ $gender->name }}</option>
                 @endforeach
             </select>
         </div>
         <div class="mb-3">
-            <label for="species_id" class="form-label">Species</label>
-            <select class="form-select" id="species_id" name="species_id" required>
-                @foreach($species as $specie)
-                <option value="{{ $specie->id }}">{{ $specie->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
             <label for="resource_id" class="form-label">Resource</label>
             <select class="form-select" id="resource_id" name="resource_id" required>
+                <option value="" disabled selected>-</option>
                 @foreach($resources as $resource)
                 <option value="{{ $resource->id }}">{{ $resource->name }}</option>
                 @endforeach
             </select>
         </div>
         <div class="mb-3">
-            <label for="range_type_id" class="form-label">Range Type</label>
-            <select class="form-select" id="range_type_id" name="range_type_id" required>
-                @foreach($rangeTypes as $rangeType)
-                <option value="{{ $rangeType->id }}">{{ $rangeType->name }}</option>
-                @endforeach
-            </select>
+            <label class="form-label">Species</label>
+            @foreach($species as $specie)
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="species[]" value="{{ $specie->id }}" id="specie_{{ $specie->id }}">
+                <label class="form-check-label" for="specie_{{ $specie->id }}">
+                    {{ $specie->name }}
+                </label>
+            </div>
+            @endforeach
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Range Types</label>
+            @foreach($ranges as $range)
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ranges[]" value="{{ $range->id }}" id="range_{{ $range->id }}">
+                <label class="form-check-label" for="range_{{ $range->id }}">
+                    {{ $range->type }}
+                </label>
+            </div>
+            @endforeach
         </div>
         <div class="mb-3">
             <label class="form-label">Positions</label>

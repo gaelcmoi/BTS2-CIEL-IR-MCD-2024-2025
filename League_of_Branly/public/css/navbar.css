@@ -1,0 +1,30 @@
+.navbar-toggler {
+    border-color: var(--gold-4);
+    color: var(--gold-4);
+}
+
+.navbar-brand {
+    letter-spacing: -0.05em;
+    margin-bottom: 0;
+}
+
+.navbar-nav {
+    margin-left: var(--bs-navbar-brand-margin-end);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240, 230, 210, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-link, .nav-link:hover, .nav-link:focus {
+    color: var(--gold-1);
+}
+
+.nav-link:hover, .nav-link:focus, .active {
+    text-decoration: underline;
+    text-decoration-color: var(--gold-4);
+}
+
+.navbar-brand:hover, .navbar-brand:focus, .navbar-nav .nav-link.active {
+    color: var(--gold-4);
+}

@@ -1,71 +1,192 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1 class="mb-4">LoLdle - Classic</h1>
+<div class="container mt-4">
+    <h1>Champions</h1>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach($champions as $champion)
-        <div class="col">
-            <div class="card h-100 champion-card">
-                <img src="{{ asset('images/champions/' . $champion->name . '.jpg') }}" class="card-img-top champion-avatar" alt="{{ $champion->name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $champion->name }}</h5>
-                    <p class="card-text"><strong>Gender:</strong> {{ $champion->gender->name ?? 'Unknown' }}</p>
-                    <p class="card-text"><strong>Position(s):</strong> {{ $champion->positions->pluck('name')->implode(', ') }}</p>
-                    <p class="card-text"><strong>Species:</strong> {{ $champion->species->name ?? 'Unknown' }}</p>
-                    <p class="card-text"><strong>Resource:</strong> {{ $champion->resource->name ?? 'Unknown' }}</p>
-                    <p class="card-text"><strong>Range Type:</strong> {{ $champion->rangeType->name ?? 'Unknown' }}</p>
-                    <p class="card-text"><strong>Region(s):</strong> {{ $champion->regions->pluck('name')->implode(', ') }}</p>
-                    <p class="card-text"><strong>Release Year:</strong> {{ $champion->release_date->format('Y') }}</p>
-                </div>
+    <!-- Barre de filtre d'inclusion -->
+    <div class="filter-bar">
+        <h5>Inclure les champions ayant :</h5>
+        <form id="inclusionForm" class="row g-3">
+            <div class="col-md-2">
+                <select class="form-select" name="gender">
+                    <option value="">Genre</option>
+                    @foreach($genders as $gender)
+                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>
+                    @endforeach
+                </select>
             </div>
-        </div>
-        @endforeach
+            <div class="col-md-2">
+                <select class="form-select" name="specie">
+                    <option value="">Espèce</option>
+                    @foreach($species as $specie)
+                        <option value="{{ $specie->id }}">{{ $specie->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="resource">
+                    <option value="">Ressource</option>
+                    @foreach($resources as $resource)
+                        <option value="{{ $resource->id }}">{{ $resource->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="range_type">
+                    <option value="">Type de portée</option>
+                    @foreach($ranges as $range)
+                        <option value="{{ $range->id }}">{{ $range->type }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="position">
+                    <option value="">Position</option>
+                    @foreach($positions as $position)
+                        <option value="{{ $position->id }}">{{ $position->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="region">
+                    <option value="">Région</option>
+                    @foreach($regions as $region)
+                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </form>
     </div>
+
+    <!-- Barre de filtre d'exclusion -->
+    <div class="filter-bar">
+        <h5>Exclure les champions ayant :</h5>
+        <form id="exclusionForm" class="row g-3">
+            <div class="col-md-2">
+                <select class="form-select" name="exclude_gender">
+                    <option value="">Genre</option>
+                    @foreach($genders as $gender)
+                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="exclude_specie">
+                    <option value="">Espèce</option>
+                    @foreach($species as $specie)
+                        <option value="{{ $specie->id }}">{{ $specie->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="exclude_resource">
+                    <option value="">Ressource</option>
+                    @foreach($resources as $resource)
+                        <option value="{{ $resource->id }}">{{ $resource->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="exclude_range_type">
+                    <option value="">Type de portée</option>
+                    @foreach($ranges as $range)
+                        <option value="{{ $range->id }}">{{ $range->type }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="exclude_position">
+                    <option value="">Position</option>
+                    @foreach($positions as $position)
+                        <option value="{{ $position->id }}">{{ $position->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select class="form-select" name="exclude_region">
+                    <option value="">Région</option>
+                    @foreach($regions as $region)
+                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <!-- Tableau des champions -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Titre</th>
+                <th>Genre</th>
+                <th>Espèce</th>
+                <th>Ressource</th>
+                <th>Type de portée</th>
+                <th>Positions</th>
+                <th>Régions</th>
+            </tr>
+        </thead>
+        <tbody id="championsTableBody">
+            @foreach($champions as $champion)
+            dump($champion);
+                <tr>
+                    <td>{{ $champion->name }}</td>
+                    <td>{{ $champion->title }}</td>
+                    <td>{{ $champion->gender->name }}</td>
+                    <td>{{ $champion->specie->name }}</td>
+                    <td>{{ $champion->resource->name }}</td>
+                    <td>{{ $champion->range->type }}</td>
+                    <td>{{ $champion->positions->pluck('name')->implode(', ') }}</td>
+                    <td>{{ $champion->regions->pluck('name')->implode(', ') }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 @endsection
 
-@section('styles')
-<style>
-    .champion-card {
-        background-color: var(--blue-6);
-        color: var(--gold-1);
-        transition: transform 0.3s ease-in-out;
-    }
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const inclusionForm = document.getElementById('inclusionForm');
+        const exclusionForm = document.getElementById('exclusionForm');
+        const championsTableBody = document.getElementById('championsTableBody');
 
-    .champion-card:hover {
-        transform: scale(1.05);
-    }
+        function updateChampions() {
+            const inclusionData = new FormData(inclusionForm);
+            const exclusionData = new FormData(exclusionForm);
 
-    .champion-avatar {
-        height: 200px;
-        object-fit: cover;
-    }
+            fetch('{{ route("champions.filter") }}', {
+                method: 'POST',
+                body: new URLSearchParams([...inclusionData, ...exclusionData]),
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                championsTableBody.innerHTML = data.map(champion => `
+                    <tr>
+                        <td>${champion.name}</td>
+                        <td>${champion.title}</td>
+                        <td>${champion.gender.name}</td>
+                        <td>${champion.specie.name}</td>
+                        <td>${champion.resource.name}</td>
+                        <td>${champion.range.type}</td>
+                        <td>${champion.positions.map(p => p.name).join(', ')}</td>
+                        <td>${champion.regions.map(r => r.name).join(', ')}</td>
+                    </tr>
+                `).join('');
+            })
+            .catch(error => console.error('Error:', error));
+        }
 
-    .card-title {
-        color: var(--gold-4);
-    }
-
-    strong {
-        color: var(--gold-2);
-    }
-
-    .btn-primary {
-        background-color: var(--blue-4);
-        color: var(--gold-1);
-        border: none;
-    }
-
-    .btn-secondary {
-        background-color: var(--gold-5);
-        color: var(--blue-7);
-        border: none;
-    }
-
-    .btn-primary:hover,
-    .btn-secondary:hover {
-        filter: brightness(1.2);
-    }
-</style>
-@endsection
+        inclusionForm.addEventListener('change', updateChampions);
+        exclusionForm.addEventListener('change', updateChampions);
+    });
+</script>
+@endpush
