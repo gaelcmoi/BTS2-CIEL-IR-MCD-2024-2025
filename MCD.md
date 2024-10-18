@@ -139,17 +139,17 @@ Dans ce modèle :
 
 Utiliser diagram.net pour refaire l'exemple de la partie 3.
 
-## Partie 2 - MCD étendu
+## Partie 2 - MCD étendu / Modèle Physique de Données
 
-Le Modèle Conceptuel de Données (MCD) Étendu est une version plus détaillée du MCD classique. Il inclut non seulement les entités, les relations et les cardinalités, mais aussi les types de données pour chaque attribut. Cette approche permet une modélisation plus précise et facilite la transition vers le modèle logique et physique de la base de données.
+Le Modèle Conceptuel de Données (MCD) Étendu est une version plus détaillée du MCD classique, on l'appelle également Modèle Physique de Données. Il inclut non seulement les entités, les relations et les cardinalités, mais aussi les types de données pour chaque attribut. Cette approche permet une modélisation plus précise et facilite la transition vers le modèle logique et physique de la base de données.
 
-### 1. Concepts du MCD Étendu
+### 1. Concepts du MCD Étendu / Modèle Physique de Données
 
 #### 1.1 Entités avec Types
 
-Dans un MCD étendu, chaque entité est représentée par un rectangle divisé en trois parties :
-1. Le nom de l'entité
-2. La clé primaire
+Dans un MCD étendu, chaque entité est représentée par un rectangle divisé en trois parties, se sera une table de notre base de données :
+1. Le nom de la table
+2. La clé primaire, qui doit être soulignée
 3. Les noms et les types de données correspondants
 
 #### 1.2 Types de Données Courants
@@ -170,34 +170,29 @@ Voici une liste des types de données fréquemment utilisés dans un MCD étendu
 
 ### 1.3 Relations et Cardinalités
 
-Les relations et cardinalités restent identiques au MCD classique, mais avec l'ajout des types pour chaque attribut.
+Lorsqu'il s'agit d'une relation `one-to-many`, on va venir mettre une clé étrangère dans la table principale. On relira cette clé étrangère à la table dont elle est issue. Pour les relations `many-to-many`, il faut faire apparaitre une table intermédiare dite **pivot** qui contiendra les clés étrangères des deux tables concernées.
 
 ## 2. Étapes pour Construire un MCD Étendu
 
-### 2.1 Identifier les Entités et leurs Attributs
+### 2.1 Identifier les tables et leurs champs
 
-- Listez les entités importantes du système.
-- Pour chaque entité, identifiez ses attributs.
+- Transformer les entités en table.
+- Chaque attribut devient un champs de la table.
 
 ### 2.2 Définir les Types de Données
 
-- Pour chaque attribut, déterminez le type de données approprié.
+- Pour chaque champs, déterminez le type de données approprié.
 - Choisissez des types qui reflètent précisément la nature et la taille des données.
 
 ### 2.3 Établir les Relations et Cardinalités
 
-- Identifiez les liens entre les entités.
-- Définissez les cardinalités pour chaque relation.
+- Identifiez les liens entre les entités (`one-to-many` ou `many-to-many`).
+- Définissez les cardinalités pour chaque relation et ajoutez des tables ou flèches en fonctions des situations.
 
 ### 2.4 Affiner le Modèle
 
 - Vérifiez la cohérence des types de données.
 - Assurez-vous que les clés primaires sont correctement typées (généralement INT pour les ID auto-incrémentés).
-
-Dans cet exemple :
-- Les entités incluent maintenant les types pour chaque attribut.
-- La relation "possède" et les cardinalités restent les mêmes que dans le MCD classique.
-- Les types choisis reflètent la nature des données (par exemple, TEXT pour les descriptions longues, INT pour les identifiants et le coût en mana).
 
 ## 4. Avantages du MCD Étendu
 

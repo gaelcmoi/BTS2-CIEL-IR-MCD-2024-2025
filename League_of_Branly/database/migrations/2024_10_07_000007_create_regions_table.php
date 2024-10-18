@@ -68,6 +68,10 @@ return new class extends Migration
                 'name' => 'Ixtal',
                 'lore' => 'A secretive jungle realm mastering elemental magic.'
             ],
+            [
+                'name' => 'Runeterra',
+                'lore' => 'A secretive jungle realm mastering elemental magic.'
+            ],
         ];
         DB::table('regions')->insert($regions);
     }

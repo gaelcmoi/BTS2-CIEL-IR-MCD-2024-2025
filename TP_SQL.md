@@ -7,13 +7,24 @@ L'objectif de ce TP est de vous familiariser avec l'écriture de requêtes SQL, 
 - Connaissance de base du SQL
 - Compréhension du MCD de League of Branly fourni ci-dessous
 - L'exécution des migrations qui vous sont fournis dans ce repository `League_of_Branly/database/migrations`.
+- Si vous ne trouvez pas votre conteneur sur Docker Desktop :
+    - Ouvrez un bloc note et copier/coller la commande suivante :
+    ```bash
+    docker run -p 80:80 -p 443:443 -p 443:443/udp \
+        -v D:/csimon.SNIRW/League_of_Branly:/var/www/html \
+        shinsenter/laravel:latest
+    ```
+    - Remplacez `csimon.SNIRW` par le nom de votre dossier dans le lecteur `D:`
+    - Ouvrez un **bash** en **administrateur** avec le compte **.\tpdocker**
+    - Collez la commande modifiée et exécutez là
 
 ```mermaid
 erDiagram
     CHAMPION {
         int champion_id PK
         varchar(50) name
-        varchar(50) lore
+        text lore
+        varchar(50) title
         int gender_id FK
         int resource_id FK
         int year_id FK
@@ -66,7 +77,7 @@ Vous travaillez sur une base de données SQLite qui gère les informations sur l
 - Pensez à l'utilisation appropriée des index pour améliorer les performances des requêtes.
 
 ### 1. Création d'une table
-Créez une table `champions` avec les colonnes appropriées basées sur le MCD fourni.
+Créez une table `champion` avec les colonnes appropriées basées sur le MCD fourni. Après l'exécution de la requête, votre table `champion` doit avoir strictement la même structure que la table `champions`.
 
 ### 2. Modification d'une table
 Ajoutez une nouvelle colonne `popularity` de type INT à la table `champions`.
@@ -80,6 +91,7 @@ Insérez le champion Fiddlesticks dans la table `champions` avec les attributs s
 - Espèce : Démon
 - Ressource : Mana
 - Portée : À distance
+- Position : Jungle
 - Région principale : Runeterra
 - Année de sortie : 2009
 - Popularité : 5 (sur une échelle de 1 à 10)
