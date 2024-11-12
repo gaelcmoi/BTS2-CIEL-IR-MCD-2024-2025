@@ -27,7 +27,7 @@ return new class extends Migration
             ['name' => 'Bloodthirst'],
             ['name' => 'Flow'],
             ['name' => 'Courage'],
-            ['name' => 'None'],
+            ['name' => 'Manaless'],
         ];
 
         DB::table('resources')->insert($resources);

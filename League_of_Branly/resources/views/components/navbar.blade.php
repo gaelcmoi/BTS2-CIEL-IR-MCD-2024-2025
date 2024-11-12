@@ -4,8 +4,10 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="d-block d-lg-none">
-            <x-decorator-hr />
+        <div class="position-absolute justify-content-center z-2 bot-pos decorator-hr d-block d-lg-none">
+            <div>
+                <img src="{{ asset('img/decorator-hr.svg') }}" class="w-100" />
+            </div>
         </div>
         <div class="collapse navbar-collapse justify-content-center flex-column" id="navbarNav">
             <div class="my-3">
@@ -26,12 +28,16 @@
                         <a class="nav-link h4 heading {{ request()->is('skins') ? 'active' : '' }} link-underline-opacity-100-hover link-offset-3" href="">SPLASH</a>
                     </li>
                 </ul>
-                <div class="d-block d-lg-none">
-                    <x-decorator-hr />
+                <div class="d-block d-lg-none position-absolute justify-content-center" style="top: 57px; max-width: 388px;">
+                    <div>
+                        <img src="{{ asset('img/decorator-hr.svg') }}" class="w-100 animate-decorator" />
+                    </div>
                 </div>
             </div>
-            <div class="d-none d-lg-block">
-                <x-decorator-hr />
+            <div class="d-none d-lg-block position-absolute z-2 bot-nav">
+                <div>
+                    <img src="{{ asset('img/decorator-hr-lg.svg') }}">
+                </div>
             </div>
         </div>
     </div>

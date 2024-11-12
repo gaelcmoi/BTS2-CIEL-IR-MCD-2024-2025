@@ -28,3 +28,8 @@
 .navbar-brand:hover, .navbar-brand:focus, .navbar-nav .nav-link.active {
     color: var(--gold-4);
 }
+
+.bot-nav {
+    bottom: -93px;
+    overflow-x: hidden;
+}

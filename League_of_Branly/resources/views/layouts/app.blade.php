@@ -150,7 +150,7 @@
             @yield('content')
         </main>
 
-        <footer class="mt-auto py-3">
+        <footer class="mt-auto p-5">
             <div class="container text-center text-grey-2">
                 <p>&copy; {{ date('Y') }} League of Branly. All content and assets of this website are the property of League of Legends and RIOT GAMES.</p>
                 <p>This website exist as an exercise for the student of BTS CIEL in Lycée Polyvalent Edouard Branly, LYON, FRANCE.</p>
