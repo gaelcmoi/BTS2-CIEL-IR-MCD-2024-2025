@@ -20,6 +20,6 @@ class Resource extends Model
 
     public function champions()
     {
-        return $this->hasMany(Champion::class);
+        return $this->hasMany(Champion::class, 'resource_id', 'resource_id');
     }
 }

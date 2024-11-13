@@ -130,7 +130,7 @@ Implémentez une requête qui récupère tous les champions d'une région spéci
 Trouvez tous les champions qui sont associés à plus d'une région.
 
 ### 12. Requête complexe : Champions polyvalents
-Écrivez une requête pour trouver les champions qui peuvent jouer à plus de 2 positions différentes.
+Écrivez une requête pour trouver les champions qui peuvent jouer à 2 ou plus positions différentes.
 
 ## Bonus
 - Écrivez une procédure stockée qui effectue une opération complexe sur la base de données.

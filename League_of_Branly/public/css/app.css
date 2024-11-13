@@ -97,6 +97,9 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: bottom;
 }
 
 .welcome-block .h1 {
@@ -136,6 +139,14 @@ p {
 .decoration {
     width: 55px;
     font-size: 20px;
+}
+
+.decorator-hr {
+    max-width: unset;
+}
+
+.bot-pos {
+    bottom: -20px;
 }
 
 /* Responsive adjustments */
@@ -186,5 +197,13 @@ p {
     #cdm-diagram {
         max-height: 500px;
         object-fit: cover;
+    }
+
+    .decorator-hr {
+        max-width: 388px;
+    }
+
+    .bot-pos {
+        bottom: -14px;
     }
 }

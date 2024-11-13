@@ -67,7 +67,7 @@ class Champion extends Model
      */
     public function resource()
     {
-        return $this->belongsTo(Resource::class);
+        return $this->belongsTo(Resource::class, 'resource_id', 'resource_id');
     }
 
     /**

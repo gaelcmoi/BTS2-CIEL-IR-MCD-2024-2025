@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="mb-4 heading">Create New Region</h1>
+    <x-page-header title="Create New Region" style="h1 heading" />
 
     <form action="{{ route('regions.store') }}" method="POST" class="region-form border rounded p-4 gradient-blue-6-7">
         @csrf
